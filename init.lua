@@ -25,6 +25,14 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+
+require("nvim-tree").setup({
+  view = {
+    number = true,         -- enable absolute line numbers
+    relativenumber = true, -- enable relative line numbers
+  }
+})
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
