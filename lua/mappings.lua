@@ -26,3 +26,19 @@ map("i", "ff", function()
     vim.api.nvim_feedkeys("l", "i", true)
   end
 end, { desc = "Double l to jump past closing bracket/quote" })
+
+
+vim.keymap.set("n", "<leader>cp", function()
+  vim.fn.setreg("+", vim.fn.system("echo $GITHUB_PERSONAL"))
+  print("✅ GITHUB_PERSONAL copied to clipboard!")
+end, { desc = "Copy GITHUB_PERSONAL token to clipboard" })
+
+vim.keymap.set("n", "<leader>ct", function()
+  vim.fn.setreg("+", vim.fn.system("echo $GITHUB_TOKEN"))
+  print("Copied GITHUB_TOKEN to clipboard!")
+end, { desc = "Copy GitHub token to clipboard" })
+
+vim.keymap.set("n", "<leader>sb", function()
+  vim.api.nvim_buf_set_lines(0, 0, 0, false, { "#!/usr/bin/bash", "" })
+  print("🚀 Shebang inserted!")
+end, { desc = "Insert bash shebang" })
